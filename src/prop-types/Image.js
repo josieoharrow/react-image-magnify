@@ -16,8 +16,8 @@ export const LargeImageShape = PropTypes.shape(
         {},
         BaseImageShape,
         {
-            width: PropTypes.number.isRequired,
-            height: PropTypes.number.isRequired
+            width: PropTypes.number,
+            height: PropTypes.number
         }
     )
 );

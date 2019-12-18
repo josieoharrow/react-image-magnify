@@ -71,6 +71,7 @@ class ReactImageMagnify extends React.Component {
         shouldUsePositiveSpaceLens: PropTypes.bool,
         smallImage: SmallImageShape,
         largeImage: LargeImageShape,
+        magnification: PropTypes.number,
         enlargedImageContainerClassName: PropTypes.string,
         enlargedImageContainerStyle: PropTypes.object,
         enlargedImageClassName: PropTypes.string,
@@ -116,6 +117,7 @@ class ReactImageMagnify extends React.Component {
 
         this.setSmallImageDimensionState();
         window.addEventListener('resize', this.setSmallImageDimensionState);
+
     }
 
     componentWillUnmount() {
@@ -286,6 +288,7 @@ class ReactImageMagnify extends React.Component {
             imageStyle,
             lensStyle,
             largeImage,
+            magnification,
             enlargedImageContainerClassName,
             enlargedImageContainerStyle,
             enlargedImageClassName,
@@ -301,6 +304,8 @@ class ReactImageMagnify extends React.Component {
         } = this.props;
 
         const smallImage = this.smallImage;
+        largeImage.height = this.smallImage.height*magnification;
+        largeImage.width = this.smallImage.width*magnification;
 
         const {
             detectedInputType: {

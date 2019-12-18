@@ -45,6 +45,7 @@ export default class extends React.Component {
         imageStyle: PropTypes.object,
         isActive: PropTypes.bool,
         isLazyLoaded: PropTypes.bool,
+        magnification: PropTypes.number,
         largeImage: LargeImageShape,
         containerDimensions: ContainerDimensions,
         isPortalRendered: PropTypes.bool,
